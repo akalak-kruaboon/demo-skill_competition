@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Main</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="asset/bootstrap-5.0.2-dist/css/bootstrap.css">
+  <script src="asset/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+
+  <link rel="stylesheet" href="asset/css/style.css">
+  <link rel="stylesheet" href="asset/css/main.css">
+
+  <script src="asset/myjs.js"></script>
+
+  <style>
+    .form-control {
+      outline: 0;
+      border-radius: 0;
+    }
+
+    .form-control:focus {
+      box-shadow: 0 0 0 0;
+    }
+
+    .btn {
+      border-radius: 0;
+    }
+  </style>
+</head>
+
+<body style="background-color: #ff5b5b17;">
+
+  <!-- navbar -->
+  <nav class="shadow fixed-top border-bottom border-danger"
+    style="top: 0rem; user-select: none; border-radius: 0 0 2rem 2rem; height: 80px; opacity: 98%;">
+
+
+    <div class="container align-items-center h-100 " style="display: flex; ">
+      <!-- <a href="" class="me-5" ><img src="img/logo_web.png" style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%;"></a> -->
+      <h5 style="text-transform: uppercase;" class="me-md-3 me-0 text-center fw-bold" id="logo">Happy Food</h5>
+
+
+      <div class="d-flex position-relative ms-auto d-none d-md-block" id="searchbar_all">
+        <i class="bi bi-search position-absolute text-secondary d-none d-md-block" style="top: 10px; left: 20px;"></i>
+
+        <input id="searchbar"
+          onclick="document.getElementById('showSearch').style = 
+          ('position: absolute; top: 50px; border-radius: 0rem 0rem 0.5rem 0.5rem; max-height: 450px; overflow-y: auto; transition: 0.5s !important;');"
+          type="search" class="form-control me-0 shadow-sm border-0 px-4 ps-5 pe-2 d-none d-md-block"
+          placeholder="ค้นหา..."
+          style="line-height: 30px; background-color: #eff0f5; width: 500px; border-top-left-radius: 0.3rem; border-bottom-left-radius: 0.3rem;">
+
+        <!-- show search -->
+        <div id="showSearch" class="w-100 bg-white shadow text-dark d-none d-md-block"
+          style="position: absolute; top: 50px; max-height: 0px; overflow-y: auto;">
+
+          <div class="p-3 pt-3">
+
+            <div class="position-sticky" style="top: 16px;">
+              <div class="d-flex justify-content-end">
+                <button id="close_showsearch" class="btn-close" style="box-shadow: 0 0 0 0;"
+                  onclick="document.getElementById('showSearch').style = 
+                ('position: absolute; top: 50px; border-radius: 0rem 0rem 0.5rem 0.5rem; max-height: 0px; overflow-y: auto; transition: 0.5s !important;');"></button>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <h5>• ร้านค้าที่ค้นพบ</h5>
+
+              <a href="" class="d-flex mt-2 results_search align-items-center text-decoration-none text-dark ">
+                <img
+                  src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                  width="50px" height="50px" class="rounded-circle" style="object-fit: cover;">
+                <div class="ms-2">ร้านอาหารหรู
+                  <div class="d-flex" style="font-size: 13px;">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-half text-warning"></i>
+
+                    <span class="ms-2">(<span>4.9</span>)</span>
+                  </div>
+                </div>
+              </a>
+
+
+
+            </div>
+            <div class="dropdown-divider" style="opacity: 50%;"></div>
+            <div class="mb-3 mt-3">
+              <h5>• เมนูที่ค้นพบ</h5>
+
+              <a href="" class="d-flex mt-2 results_search align-items-center text-decoration-none text-dark ">
+                <img src="https://i.ytimg.com/vi/cFciXuCdG_o/maxresdefault.jpg" width="50px" height="50px"
+                  class="rounded-circle" style="object-fit: cover;">
+
+                <div class="ms-2"> กระเพราหมูหรอบ <span class="text-secondary">| <span>ร้านอาหารหรู</span></span>
+                  <div class="d-flex" style="font-size: 13px;">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-half text-warning"></i>
+
+                    <span class="ms-2">(<span>4.9</span>)</span>
+                  </div>
+                </div>
+              </a>
+
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+      <button class="btn text-white me-4 search-btn d-none d-md-block"
+        style="background-color: #f57224; line-height: 30px; border-top-right-radius: 0.3rem; border-bottom-right-radius: 0.3rem;"><i
+          class="bi bi-search"></i></button>
+
+      <!-- Cart -->
+      <a href="" class="text-decoration-none me-3 ms-auto ms-md-0">
+        <div class="position-relative">
+          <div class="position-absolute" style="top: 0; right: -10px; color: #000000; width: 30px; height: 40px;">
+
+            <input id="amount" class="text-center border"
+              style="background-color: #f57224; border-radius: 5px;color: white; font-size: 15px; width: 35px;"
+              value="0">
+
+          </div>
+          <i class="bi bi-cart text-white" id="cart" style="font-size: 35px;"></i>
+        </div>
+      </a>
+
+
+
+      <div class="ms-sm-auto me-sm-2 me-0 hover_nav ps-2 pe-2">
+        <div class="dropdown open">
+          <div class="dropdown-toggle d-flex align-items-center" id="การสั่งซื้อของฉัน" data-bs-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">
+            การสั่งซื้อของฉัน
+          </div>
+          <div class="dropdown-menu  p-2 rounded-2 dropdown-menu-start">
+            <a class="dropdown-item rounded-2" href="#">สถานะการจัดสั่ง</a>
+            <a class="dropdown-item rounded-2" href="#">ประวัติการสั่งซื้อ</a>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="hover_nav pe-sm-3 p-0">
+        <div class="dropdown open ms-sm-3 ms-2">
+
+          <div class="dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false" style="cursor: pointer;">
+            <img class="border"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png"
+              style="width:45px; height: 45px; border-radius: 50%; object-fit: cover; padding: 2px;">
+          </div>
+
+          <div class="dropdown-menu p-2 rounded-2">
+            <a class="dropdown-item rounded-2" href="#">โปรไฟล์</a>
+            <a class="dropdown-item rounded-2" href="#">การตั้งค่า</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item rounded-2" href="index.html">ออกจากระบบ</a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+
+  </nav>
+  <!-- end navbar -->
+
+
+
+
+
+
+
+
+
+  <!-- main content -->
+  <div style="margin-top: 90px; border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;"
+    class="bg-white container-sm container-fluid pb-4 pt-sm-2 p-sm-5 px-2 pt-0 shadow">
+
+    <div class="container p-0 pt-2" style="border-radius: 0; background-color:0;">
+      <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active rounded-circle" aria-current="true"
+            aria-label="First slide" style="height: 10px; width: 10px; border: 1px solid #00000052;"></li>
+          <li data-bs-target="#carouselId" data-bs-slide-to="1" class="rounded-circle" aria-label="Second slide"
+            style="height: 10px; width: 10px; border: 1px solid #00000052;"></li>
+          <li data-bs-target="#carouselId" data-bs-slide-to="2" class="rounded-circle" aria-label="Third slide"
+            style="height: 10px; width: 10px; border: 1px solid #00000052;"></li>
+          <li data-bs-target="#carouselId" data-bs-slide-to="3" class="rounded-circle" aria-label="Four slide"
+            style="height: 10px; width: 10px; border: 1px solid #00000052;"></li>
+        </ol>
+        <div class="carousel-inner" id="myCarousel" role="listbox" style="border-radius: 0;">
+          <div class="carousel-item active shadow">
+
+            <img
+              src="https://images.unsplash.com/photo-1499028344343-cd173ffc68a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+              style="height: 300px; object-fit: cover; border-radius: 0.5rem;" class="w-100 d-block" alt="First slide">
+
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Title</h3>
+              <p>Description</p>
+            </div>
+          </div>
+          <div class="carousel-item shadow">
+
+            <img
+              src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+              style="height: 300px; object-fit: cover; border-radius: 0.5rem;" class="w-100 d-block" alt="Second slide">
+
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Title</h3>
+              <p>Description</p>
+            </div>
+          </div>
+          <div class="carousel-item shadow">
+
+            <img
+              src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              style="height: 300px; object-fit: cover; border-radius: 0.5rem;" class="w-100 d-block" alt="Third slide">
+
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Title</h3>
+              <p>Description</p>
+            </div>
+          </div>
+          <div class="carousel-item shadow">
+
+            <img
+              src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              style="height: 300px; object-fit: cover; border-radius: 0.5rem;" class="w-100 d-block" alt="Four slide">
+
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Title</h3>
+              <p>Description</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <div>
+
+    </div>
+
+
+    <!-- menu center start -->
+    <div class="container-fluid">
+      <div class="container p-2 mt-3" style=" border-radius: 0;">
+
+        <div class="row">
+
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="border bg-white d-flex align-items-center justify-content-center link-center-menu">
+              <h6 style="font-size: 17px;"><i class="bi bi-tags"></i> ร้านค้าที่มีการลดราคา</h6>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="border bg-white d-flex align-items-center justify-content-center link-center-menu mt-2 mt-md-0">
+              <h6 style="font-size: 17px;"><i class="bi bi-shop me-2"></i>ร้านอาหารชื่อดัง</h6>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="border bg-white d-flex align-items-center justify-content-center link-center-menu mt-2 mt-lg-0">
+              <h6 style="font-size: 17px;"><i class="bi bi-shop-window me-2"></i>ร้านค้าแนะนำ</h6>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="border bg-white d-flex align-items-center justify-content-center link-center-menu mt-2 mt-lg-0">
+              <h6 style="font-size: 17px;"><i class="bi bi-shop-window me-2"></i>หมวดหมู่ทั้งหมด</h6>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+    </div>
+    <!-- menu center end -->
+
+
+
+
+
+    <!-- main content -->
+    <div class="dropdown-divider mt-3" style="opacity: 50%;"></div>
+
+
+
+
+    <h4 class="mt-3 container">• ร้านอาหารอร่อยยกนิ้ว <i class="bi bi-hand-thumbs-up-fill text-warning"></i></h4>
+    <!-- ร้านอาหารอร่อยยกนิ้ว -->
+    <div class="bg-white mt-2 container">
+      <div class="d-flex max_store_slid" style="max-width: 1224px; overflow-x: auto; overflow-y: hidden;">
+
+
+        <div class="col-lg-3 col-md-4 col-sm-6 px-2 pb-2" style="cursor: pointer;">
+          <div class="store text-decoration-none p-2 border" style="border-radius: 0.5rem;">
+
+            <a href="" class="text-decoration-none store">
+              <div class="position-relative">
+                <img id="img_store"
+                  src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                  height="180px" width="100%" style="object-fit: cover; border-radius: 0.5rem;">
+                <div id="discount_store"
+                  class="position-absolute text-white text-danger text-center m-sm-2 m-0 rounded-3"
+                  style="top: 0; background-color: #fa3939d7; width: 120px; font-size: 14px;">
+                  <span>ร้านนี้มีการลดราคา</span>
+                </div>
+              </div>
+              <div class="ps-2 pb-2">
+                <h6 class="pt-2">ร้านอาหารหรู</h6>
+                <h6 style="font-size: 14px;" class="text-secondary mt-1">หรูๆเลยนะ</h6>
+
+                <div class="d-flex" style="font-size: 13px;">
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-half text-warning"></i>
+
+                  <span class="ms-2">(<span>4.9</span>)</span>
+                </div>
+              </div>
+            </a>
+
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+
+
+
+    <div class="dropdown-divider mt-3" style="opacity: 50%;"></div>
+
+    <h4 class="mt-3 container">• ร้านอาหารทั้งหมด</h4>
+    <!-- ร้านอาหารทั้งหมด -->
+    <div class="bg-white mt-2 container">
+      <div class="d-flex row">
+
+        <div class="col-lg-3 col-md-4 col-sm-6 px-2 pb-2" style="cursor: pointer;">
+          <div class="store text-decoration-none p-2 border" style="border-radius: 0.5rem;">
+
+            <a href="" class="text-decoration-none store">
+              <div class="position-relative">
+                <img
+                  src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                  height="180px" width="100%" style="object-fit: cover; border-radius: 0.5rem;">
+                <div class="position-absolute text-white text-danger text-center m-2 rounded-3"
+                  style="top: 0; background-color: #fa3939d7; width: 120px; font-size: 14px;">
+                  <span>ร้านนี้มีการลดราคา</span>
+                </div>
+              </div>
+              <div class="ps-2 pb-2">
+                <h6 class="pt-2">ร้านอาหารหรู</h6>
+                <h6 style="font-size: 14px;" class="text-secondary mt-1">หรูๆเลยนะ</h6>
+
+                <div class="d-flex" style="font-size: 13px;">
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-half text-warning"></i>
+
+                  <span class="ms-2">(<span>4.9</span>)</span>
+                </div>
+              </div>
+            </a>
+
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+
+
+
+
+
+
+    <div class="dropdown-divider mt-4" style="opacity: 60%;"></div>
+    <div class="mt-3">
+      <h4 class="container">• เมนูยอดนิยม <i class="bi bi-star-fill text-warning"></i></h4>
+      <!-- เมนูยอดนิยม -->
+      <div class="bg-white mt-2 container">
+        <div class="d-flex" style="max-width: 1224px; overflow-x: auto; overflow-y: hidden;">
+
+
+          <div class="col-lg-3 col-md-4 col-sm-6 px-2 pb-2" style="cursor: pointer;">
+            <div class="store text-decoration-none p-2 border" style="border-radius: 0.5rem;">
+
+              <a href="" class="text-decoration-none store">
+                <div class="position-relative">
+                  <img id="img_store" src="https://i.ytimg.com/vi/cFciXuCdG_o/maxresdefault.jpg" height="180px"
+                    width="100%" style="object-fit: cover; border-radius: 0.5rem;">
+                  <div id="discount_store"
+                    class="position-absolute text-white text-danger text-center m-sm-2 m-0 rounded-3"
+                    style="top: 0; background-color: #fa3939d7; width: 120px; font-size: 14px;">
+                    <span>ร้านนี้มีการลดราคา</span>
+                  </div>
+                </div>
+                <div class="ps-2 pb-2">
+                  <h6 class="pt-2">กระเพราหมูหรอบ</h6>
+                  <h6 style="font-size: 20px; color: #f57224;" class="">฿18.00</h6>
+                  <div class="d-flex">
+                    <h6 style="font-size: 14px;" class="mb-1 text-secondary text-decoration-line-through">฿35.00</h6>
+                    <h6 style="font-size: 14px;" class="text-secondary">-80%</h6>
+                  </div>
+                  <div class="d-flex" style="font-size: 13px;">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-half text-warning"></i>
+                    <span class="ms-2">(<span>4.9</span>)</span>
+                  </div>
+                </div>
+              </a>
+
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- Start Footer -->
+  <footer class="mt-2">
+
+  </footer>
+  <div class="container bg-white shadow" style="border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;">
+    <footer class="py-3 ">
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item"><a href="#" class="nav-link mx-2 text-muted p-0">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link mx-2 text-muted p-0">Contact</a></li>
+        <li class="nav-item"><a href="#" class="nav-link mx-2 text-muted p-0">Follow</a></li>
+        <li class="nav-item"><a href="#" class="nav-link mx-2 text-muted p-0">FAQs</a></li>
+        <li class="nav-item"><a href="#" class="nav-link mx-2 text-muted p-0">About</a></li>
+      </ul>
+      <p class="text-center text-muted">© 2022 Company, Inc</p>
+    </footer>
+  </div>
+  <!-- End Footer -->
+
+
+
+
+    <!-- <script>
+      var item = 0;
+      document.getElementById("input_item").value = item;
+
+    function onAdditem() {
+      item += 1;
+      document.getElementById("amount").value = item;
+      document.getElementById("input_item").value = item;
+  };
+
+  function onRemoveitem() {
+      if (item > 0) {
+          item -= 1;
+          document.getElementById("amount").value = item;
+          document.getElementById("input_item").value = item;
+      }
+
+  };
+    </script> -->
+</body>
+
+</html>

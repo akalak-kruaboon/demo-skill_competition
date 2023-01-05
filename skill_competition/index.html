@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="asset/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="asset/css/style.css">
+  <script src="asset/js/myjs.js"></script>
+
+  <style>
+    .form-control{
+        box-shadow: 0 0 0 0 !important;
+        border-radius: 0.5rem;
+        border: 0;
+        background-color: rgb(239 239 239);
+    }
+    .form-control:focus{
+        background-color: rgb(240, 240, 240);
+        box-shadow: 0px 0px 5px rgba(60, 155, 184, 0.288) !important;
+    }
+    body{
+        background-color: #e8ecf8;
+    }
+    @media (max-width:576px) {
+        #form{
+            height: 457px !important;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+    }
+  </style>
+</head>
+<body>
+    
+
+    <div class="vh-100 d-flex justify-content-center align-items-sm-center" id="form">
+      <div class="d-flex bg-light p-5 shadow position-relative" style="border-radius: 1rem; font-size: 20px;">
+        <div class="row">
+            <div class="col-lg d-none d-lg-block me-3">
+                <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" 
+                alt="" style="width: 600px; height: 650px; border-radius: 0.5rem; object-fit: cover;">
+            </div>
+            <div class="col-lg d-flex align-items-center mt-5 mt-lg-0 justify-content-center">
+                <div class="">
+                    <form class="" action="" method="post" style="width: 250px; transform: translatey(-38px);">
+                        <h5 class="mb-3 text-center fw-bold">เข้าสู่ระบบ</h5>
+                        <input type="email" class="form-control mb-2 px-3" placeholder="อีเมลของคุณ">
+                        <div class="position-relative">
+                            <input type="password" class="form-control mb-2 px-3" placeholder="รหัสผ่าน" id="input_password">
+                            <i class="bi bi-eye-fill position-absolute" style="top: 5px; right: 10px; opacity: 80%; cursor: pointer;" onclick="ShowPassword();"></i>
+                        </div>
+                        <button class="btn w-100 text-white" style="background-color: #ff5b5b;">SIGN IN</button>
+
+                        <div class="text-center mt-3">
+                            <h6>หรือ ดำเนินการต่อด้วย</h6>
+                            <div class="d-flex justify-content-center mt-4" style="gap: 20px;">
+                                <div class="login_item border">
+                                    <i class="bi bi-google text-danger"></i>
+                                </div>
+                                <div class="login_item border">
+                                    <i class="bi bi-apple"></i>
+                                </div>
+                                <div class="login_item border">
+                                    <i class="bi bi-facebook text-primary"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="text-center">
+                        <h6 class="text-secondary">คุณยังไม่มีบัญชีใช่หรือไม่?</h6>
+                        <a href="sign_up.html"><h6 class="text-dark">ลงทะเบียน</h6></a>
+                    </div>
+                </div> 
+            </div>
+        </div>
+      </div>
+    </div>
+
+   
+</body>
+
+</html>
